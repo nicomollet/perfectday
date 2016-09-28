@@ -1,0 +1,241 @@
+/*
+Theme Name:		Perfectday
+Theme URI:		http://github.com/nicomollet/perfectday/
+Description:
+Author:			Nicolas Mollet
+Author URI:		http://github.com/nicomollet/
+Template:		storefront
+Version:		1.0.0
+License: 		GNU General Public License v2 or later
+License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Tags:			e-commerce, storefront, child theme
+Text Domain:	perfectday
+*/
+
+
+/* -------------------------------------------------------------- */
+
+// Bourbon
+// See: http://bourbon.io/docs/
+@import 'bourbon';
+
+// Susy
+// Susy grid system. See: http://susydocs.oddbird.net/en/latest/
+@import 'node_modules/susy/sass/susy';
+
+// Utilities
+// Sass tools and helpers used across the project.
+@import '../storefront/assets/sass/utils/variables';
+@import '../storefront/assets/sass/utils/mixins';
+
+// Vendors
+// External libraries and frameworks.
+@import '../storefront/assets/sass/vendors/normalize';
+@import '../storefront/assets/sass/vendors/font-awesome/font-awesome';
+@import '../storefront/assets/sass/vendors/modular-scale';
+
+// Base
+// Includes all the main Storefront css.
+@import '../storefront/assets/sass/base/base';
+@import '../storefront/assets/sass/base/layout';
+
+// Storefront variables
+
+$storefront_background_color: #ffffff;
+$storefront_heading_color: #484c51;
+$storefront_text_color: #43454b;
+$storefront_accent_color: #96588a;
+
+$storefront_header_background_color: #2c2d33;
+$storefront_header_text_color: #9aa0a7;
+$storefront_header_link_color: #d5d9db;
+
+$storefront_footer_background_color: #f0f0f0;
+$storefront_footer_heading_color: #494c50;
+$storefront_footer_text_color: #61656b;
+$storefront_footer_link_color: #2c2d33;
+
+$storefront_button_background_color: #96588a;
+$storefront_button_text_color: #ffffff;
+$storefront_button_alt_background_color: #2c2d33;
+$storefront_button_alt_text_color: #ffffff;
+
+$brighten_factor: 0.2;
+$darken_factor: 0.2;
+
+.main-navigation ul li a,
+.site-title a,
+ul.menu li a,
+.site-branding h1 a,
+.site-footer .storefront-handheld-footer-bar a:not(.button),
+button.menu-toggle,
+button.menu-toggle:hover {
+  color: $storefront_header_link_color;
+}
+
+button.menu-toggle,
+button.menu-toggle:hover {
+  border-color: $storefront_header_link_color;
+}
+
+.main-navigation ul li a:hover,
+.main-navigation ul li:hover > a,
+.site-title a:hover,
+a.cart-contents:hover,
+.site-header-cart .widget_shopping_cart a:hover,
+.site-header-cart:hover > li > a,
+.site-header ul.menu li.current-menu-item > a {
+  color: darken( $storefront_header_link_color, 50 );
+}
+
+table th {
+  background-color: darken( $storefront_background_color, 0.3 );
+}
+
+table tbody td {
+  background-color: darken( $storefront_background_color, 0.1 );
+}
+
+table tbody tr:nth-child(2n) td {
+  background-color: darken( $storefront_background_color, 0.2 );
+}
+
+.site-header,
+.secondary-navigation ul ul,
+.main-navigation ul.menu > li.menu-item-has-children:after,
+.secondary-navigation ul.menu ul,
+.storefront-handheld-footer-bar,
+.storefront-handheld-footer-bar ul li > a,
+.storefront-handheld-footer-bar ul li.search .site-search,
+button.menu-toggle,
+button.menu-toggle:hover {
+  background-color: $storefront_header_background_color;
+}
+
+p.site-description,
+.site-header,
+.storefront-handheld-footer-bar {
+  color: $storefront_header_text_color;
+}
+
+.storefront-handheld-footer-bar ul li.cart .count,
+button.menu-toggle:after,
+button.menu-toggle:before,
+button.menu-toggle span:before {
+  background-color: $storefront_header_link_color;
+}
+
+.storefront-handheld-footer-bar ul li.cart .count {
+  color: $storefront_header_background_color;
+}
+
+.storefront-handheld-footer-bar ul li.cart .count {
+  border-color: $storefront_header_background_color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $storefront_heading_color;
+}
+
+.widget h1 {
+  border-bottom-color: $storefront_heading_color;
+}
+
+body,
+.secondary-navigation a,
+.onsale,
+.pagination .page-numbers li .page-numbers:not(.current), .woocommerce-pagination .page-numbers li .page-numbers:not(.current) {
+  color: $storefront_text_color;
+}
+
+.widget-area .widget a,
+.hentry .entry-header .posted-on a,
+.hentry .entry-header .byline a {
+  color: darken( $storefront_text_color, 0.2 );
+}
+
+a  {
+  color: $storefront_accent_color;
+}
+
+a:focus,
+.button:focus,
+.button.alt:focus,
+.button.added_to_cart:focus,
+.button.wc-forward:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+  outline-color: $storefront_accent_color;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
+  background-color: $storefront_button_background_color;
+  border-color: $storefront_button_background_color;
+  color: $storefront_button_text_color;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
+  background-color: darken( $storefront_button_background_color, $darken_factor );
+  border-color: darken( $storefront_button_background_color, $darken_factor );
+  color: $storefront_button_text_color;
+}
+
+button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .added_to_cart.alt, .widget-area .widget a.button.alt, .added_to_cart, .pagination .page-numbers li .page-numbers.current, .woocommerce-pagination .page-numbers li .page-numbers.current, .widget a.button.checkout {
+  background-color: $storefront_button_alt_background_color;
+  border-color: $storefront_button_alt_background_color;
+  color: $storefront_button_alt_text_color;
+}
+
+button.alt:hover, input[type="button"].alt:hover, input[type="reset"].alt:hover, input[type="submit"].alt:hover, .button.alt:hover, .added_to_cart.alt:hover, .widget-area .widget a.button.alt:hover, .added_to_cart:hover, .widget a.button.checkout:hover {
+  background-color: darken( $storefront_button_alt_background_color, $darken_factor );
+  border-color: darken( $storefront_button_alt_background_color, $darken_factor );
+  color: $storefront_button_alt_text_color;
+}
+
+#comments .comment-list .comment-content .comment-text {
+  background-color: darken( $storefront_background_color, 0.1 );
+}
+
+.site-footer {
+  background-color: $storefront_footer_background_color;
+  color: $storefront_footer_text_color;
+}
+
+.site-footer a:not(.button) {
+  color: $storefront_footer_link_color;
+}
+
+.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6 {
+  color: $storefront_footer_heading_color;
+}
+
+#order_review,
+#payment .payment_methods > li .payment_box {
+  background-color: $storefront_background_color;
+}
+
+#payment .payment_methods > li {
+  background-color: darken( $storefront_background_color, 0.1 );
+}
+
+#payment .payment_methods > li:hover {
+  background-color: darken( $storefront_background_color, 0.2 );
+}
+
+@media screen and ( min-width: 768px ) {
+  .secondary-navigation ul.menu a:hover {
+    color: lighten( $storefront_header_text_color, $brighten_factor );
+  }
+
+  .secondary-navigation ul.menu a {
+    color: $storefront_header_text_color;
+  }
+
+  .site-header-cart .widget_shopping_cart,
+  .main-navigation ul.menu ul.sub-menu,
+  .main-navigation ul.nav-menu ul.children {
+    background-color: darken( $storefront_header_background_color, 0.1 );
+  }
+}
